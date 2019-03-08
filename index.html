@@ -18,21 +18,27 @@
 </head>
 
 <body>
-  <header class="jumbotron bg-info">
+  <header class="jumbotron bg-primary text-white">
     <h1 class="display-4">Hello, world!</h1>
     <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
     <hr class="my-4">
-    <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+    <a class="btn btn-info btn-lg" href="#" role="button">Learn more</a>
   </header>
   <!-- <main class="d-flex justify-content-center" id="imgs">
     <img id="img1" src="" alt="">
   </main> -->
 
-  <main id="img" class="d-flex justify-content-center m-5">
+  <main id="img">
+    <div class="d-flex justify-content-center m-5">
       <img id="imgI" src="" alt="">
-  </main>
+    </div>
+    <div class="d-flex justify-content-center m-5">
+      <button type="button" class="btn btn-primary m-5" onclick="previous()" id="previous">Précédente</button>
+      <button type="button" class="btn btn-primary m-5" onclick="next()" id="next">Suivante</button>
+    </div>
+    </main>
   
-  <footer class="bg-info jumbotron jumbotron-fluid">
+  <footer class="bg-primary text-white jumbotron jumbotron-fluid">
       <div class="container">
         <h1 class="display-4">Fluid jumbotron</h1>
         <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>

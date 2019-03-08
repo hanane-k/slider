@@ -1,21 +1,46 @@
-// variable
 // déclarer la variable src
-var src = [
-    "img/plage1.jpg",
-    "img/plage2.jpg",
-    "img/plage3.jpg"
-]
-// j'initialise une variable pour sotcker mon tour de slider
+var src = ["img/plage1.jpg", "img/plage2.jpg", "img/plage3.jpg"];
+// initialiser une variable pour sotcker le tour de slider
 var i = 0;
-// Je récupère toutes mes images dans une variable
-var img = document.getElementById("img");
-// création d'une fonction qui recupere les images à un interval de 3s
-setInterval(function() {
-    document.getElementById("imgI").src = src[i];
-    // afficher les images suivantes dans le tableau l'une à la suite de l'autre
-    i++;
+// récupération de la premiere image et la lier avec sa source
+imgI = document.getElementById("imgI");
+imgI.src = src[i];
+function inter() {
     // si la derniere image est affichée il revient au debut
-    if(i == 3) i = 0;
-    // définir le temps de changement des images
-}, 3000);
-// console.log(img);
+    if(i == src.length - 1) {
+        i = 0
+    }
+    else{
+        i++;
+    }
+    // afficher les images suivantes dans le tableau l'une à la suite de l'autre progressivement
+    imgI.src = src[i];
+}
+// création d'une fonction qui recupere les images à un interval de 3s
+var interval  = setInterval(function() { inter() }, 3000);
+//bouton précédent
+var btn1 = document.getElementById("previous");
+function previous() {
+    clearInterval(interval);
+    if (i > 0) {
+        i-=1;
+    }
+    else {
+        i = src.length - 1;
+    }
+    imgI.src = src[i];
+    interval = setInterval(function() { inter() }, 3000);
+};
+// bouton suivant
+var btn2 = document.getElementById("next");
+function next() {
+    clearInterval(interval);
+    if (i < src.length -1) {
+        i+=1;
+    }
+    else {
+        i = 0;
+    }
+    imgI.src = src[i];
+    interval = setInterval(function() { inter() }, 3000);
+};
