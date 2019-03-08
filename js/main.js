@@ -1,5 +1,5 @@
 // déclarer la variable src
-var src = ["img/plage1.jpg", "img/plage2.jpg", "img/plage3.jpg"];
+var src = ["img/ainTaya.jpg", "img/ainTaya2.jpg", "img/tipaza.jpg", "img/tamanrasset.jpg", "img/djanet.jpg"];
 // initialiser une variable pour sotcker le tour de slider
 var i = 0;
 // récupération de la premiere image et la lier avec sa source
